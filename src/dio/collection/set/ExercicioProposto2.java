@@ -72,7 +72,7 @@ class ComparatorAnoDeCriacaoNome implements Comparator<LinguagemFavorita>{
 
     @Override
     public int compare(LinguagemFavorita l1, LinguagemFavorita l2) {
-        int anoCriacao = l1.getAnoDeCriacao().compareTo(l2.getAnoDeCriacao());
+        int anoCriacao = Integer.compare(l1.getAnoDeCriacao(), l2.getAnoDeCriacao());
         if(anoCriacao != 0) return anoCriacao;
         return l1.getNome().compareTo(l2.getNome());
     }
@@ -85,7 +85,7 @@ class ComparatorNomeAnoCriacaoIde implements Comparator<LinguagemFavorita>{
         int nome = l1.getNome().compareTo(l2.getNome());
         if(nome != 0) return nome;
 
-        int anoCriacao = l1.getAnoDeCriacao().compareTo(l2.getAnoDeCriacao());
+        int anoCriacao = Integer.compare(l1.getAnoDeCriacao(), l2.getAnoDeCriacao());
         if(anoCriacao != 0) return anoCriacao;
 
         return l1.getIde().compareTo(l2.getIde());
